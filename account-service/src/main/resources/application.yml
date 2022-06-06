@@ -1,0 +1,12 @@
+dubbo:
+  application:
+    name: account-service
+  registry:
+    address: nacos://127.0.0.1:8848?namespace=c89541f3-59b0-4ede-b3be-396eef7499e8
+    username: nacos
+    password: nacos
+  scan:
+    base-packages: com.wq.dubbo
+  protocol:
+    name: dubbo
+    port: 15511
