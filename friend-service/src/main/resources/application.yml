@@ -1,10 +1,10 @@
 server:
-  port: 8080
+  port: 8082
 dubbo:
   application:
-    name: api-service
+    name: friend-service
   registry:
-    address: nacos://172.16.72.132:8848?namespace=e8942369-0b37-44a0-b711-3927db1796ad
+    address: nacos://172.16.72.132:8848?namespace=df115cd8-6506-4417-bc91-4ee08a8ec2f1
     username: nacos
     password: nacos
   consumer:
@@ -15,7 +15,7 @@ dubbo:
     name: dubbo
     port: -1
   cloud:
-    subscribed-services: friend-service,account-service
+    subscribed-services: api-service,friend-service,account-service
 spring:
   cloud:
     nacos:
@@ -30,7 +30,7 @@ spring:
         username: nacos
         password: nacos
   application:
-    name: api-service
+    name: friend-service
   main:
     allow-circular-references: true
   datasource:
