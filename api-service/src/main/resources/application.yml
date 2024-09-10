@@ -17,18 +17,6 @@ dubbo:
   cloud:
     subscribed-services: friend-service,account-service
 spring:
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 172.16.72.132:8848
-        namespace: df115cd8-6506-4417-bc91-4ee08a8ec2f1
-        username: nacos
-        password: nacos
-      config:
-        server-addr: 172.16.72.132:8848
-        namespace: 76dae550-4133-44d8-b591-dc82f5f97b6e
-        username: nacos
-        password: nacos
   application:
     name: api-service
   main:
