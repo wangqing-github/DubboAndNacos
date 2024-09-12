@@ -1,9 +1,12 @@
 package com.wq.controller;
 
 import com.wq.account.AccountService;
+import com.wq.beans.UserInfo;
 import com.wq.config.TestConfiguration;
 import com.wq.service.UserInfoService;
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,8 +16,8 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("/test")
 public class TestController {
-    @DubboReference(mock = "com.wq.dubbo.mock.AccountServiceMock")
-    AccountService accountService;
+    private static final Logger logger = LoggerFactory.getLogger(TestController.class);
+
     @Resource
     UserInfoService userInfoService;
     @Autowired
@@ -26,6 +29,6 @@ public class TestController {
 
     @RequestMapping("/testTwo")
     public void testTwo() {
-        accountService.testDubbo("api->account");
+        userInfoService.insert(new UserInfo("李四"));
     }
 }
