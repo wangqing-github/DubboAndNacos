@@ -3,7 +3,6 @@ package com.wq.dubbo;
 import com.wq.account.AccountService;
 import com.wq.beans.Account;
 import com.wq.service.AccountLogicService;
-import io.seata.spring.annotation.GlobalTransactional;
 import org.apache.dubbo.config.annotation.DubboService;
 
 import javax.annotation.Resource;
