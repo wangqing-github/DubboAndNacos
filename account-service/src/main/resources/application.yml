@@ -3,6 +3,8 @@ server:
 dubbo:
   application:
     name: account-service
+    serialize-check-status: WARN
+    qos-enable: false
   registry:
     address: nacos://172.16.72.132:8848?namespace=e8942369-0b37-44a0-b711-3927db1796ad
     username: nacos
@@ -15,7 +17,7 @@ dubbo:
     name: dubbo
     port: -1
   cloud:
-    subscribed-services: api-service,friend-service
+    subscribed-services: api-service,friend-service,account-service
 spring:
   application:
     name: account-service

@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface AccountLogicService extends IService<Account> {
     List<Account> findAll();
+
+    void apiTestDubbo(String s);
 }

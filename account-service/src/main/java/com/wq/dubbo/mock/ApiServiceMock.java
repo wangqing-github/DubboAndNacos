@@ -4,7 +4,7 @@ import com.wq.api.ApiService;
 
 public class ApiServiceMock implements ApiService {
     @Override
-    public void apiTestDubbo(String value) {
+    public void accountToApi(String value) {
         System.out.println("调用API失败");
     }
 }

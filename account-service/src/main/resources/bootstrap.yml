@@ -3,7 +3,7 @@ spring:
     nacos:
       discovery:
         server-addr: 172.16.72.132:8848
-        namespace: df115cd8-6506-4417-bc91-4ee08a8ec2f1
+        namespace: e8942369-0b37-44a0-b711-3927db1796ad
         username: nacos
         password: nacos
       config:

@@ -10,14 +10,14 @@ import java.util.List;
 
 @DubboService
 public class AccountDubboService implements AccountService {
-    @Resource
-    AccountLogicService accountLogicService;
+//    @Resource
+//    AccountLogicService accountLogicService;
 
     @Override
-    public void testDubbo(String value) {
+    public void apiToAccount(String value) {
         System.out.println(value);
 //        List<Account> list1 = accountLogicService.list();
-        List<Account> list = accountLogicService.findAll();
-        System.out.println(list);
+//        List<Account> list = accountLogicService.findAll();
+//        System.out.println(list);
     }
 }

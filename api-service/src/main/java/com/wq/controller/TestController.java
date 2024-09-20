@@ -1,5 +1,6 @@
 package com.wq.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.wq.account.AccountService;
 import com.wq.beans.UserInfo;
 import com.wq.config.TestConfiguration;
@@ -30,5 +31,10 @@ public class TestController {
     @RequestMapping("/testTwo")
     public void testTwo() {
         userInfoService.insert(new UserInfo("李四"));
+    }
+
+    @RequestMapping("/testThree")
+    public void testThree() {
+        userInfoService.testSentinel();
     }
 }
