@@ -13,4 +13,6 @@ import com.wq.beans.UserInfo;
  */
 public interface UserInfoService extends IService<UserInfo> {
 
+    void insert(UserInfo userInfo);
+
 }

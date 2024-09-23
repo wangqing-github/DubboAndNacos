@@ -17,15 +17,21 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <spring-boot.version>2.7.18</spring-boot.version>
+        <spring-boot.version>2.6.13</spring-boot.version>
         <spring-cloud-alibaba.version>2021.0.6.0</spring-cloud-alibaba.version>
         <spring.cloud.version>2021.0.6</spring.cloud.version>
         <mysql.version>8.0.20</mysql.version>
         <hutol.version>5.5.7</hutol.version>
-        <dubbo.version>3.2.14</dubbo.version>
-        <!--此处是为了jdk更换成11添加-->
-<!--        <maven.compiler.source>11</maven.compiler.source>-->
-<!--        <maven.compiler.target>11</maven.compiler.target>-->
+        <dubbo.version>3.2.9</dubbo.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <log4j.version>2.17.1</log4j.version>
+        <ophttp.version>4.9.3</ophttp.version>
+        <kotlin-stdlib.version>2.0.0</kotlin-stdlib.version>
+        <mybatis-plus-version>3.3.2</mybatis-plus-version>
+        <mybatis-plus-generator-version>3.4.1</mybatis-plus-generator-version>
+        <velocity-engine-version>2.3</velocity-engine-version>
+        <commons-io-version>2.4</commons-io-version>
     </properties>
     <!-- 配置在此模块下的，子模块自动引入依赖-->
     <dependencies>
@@ -33,6 +39,26 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-jul</artifactId>
+            <version>${log4j.version}</version>
         </dependency>
     </dependencies>
     <!-- 统一管理，配置在此模块下的，子模块要引入依赖必须声明groupId和artifactId，不需要声明版本-->
@@ -95,6 +121,41 @@
                 <version>${dubbo.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${ophttp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib</artifactId>
+                <version>${kotlin-stdlib.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib-common</artifactId>
+                <version>${kotlin-stdlib.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus-generator-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity-engine-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io-version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

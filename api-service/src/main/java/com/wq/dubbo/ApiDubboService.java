@@ -6,7 +6,7 @@ import org.apache.dubbo.config.annotation.DubboService;
 @DubboService
 public class ApiDubboService implements ApiService {
     @Override
-    public void apiTestDubbo(String value) {
+    public void accountToApi(String value) {
         System.out.println(value);
     }
 }
