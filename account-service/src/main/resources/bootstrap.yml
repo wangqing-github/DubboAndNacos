@@ -2,12 +2,12 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 172.16.72.132:8848
+        server-addr: 172.16.72.133:8848
         namespace: e8942369-0b37-44a0-b711-3927db1796ad
         username: nacos
         password: nacos
       config:
-        server-addr: 172.16.72.132:8848
+        server-addr: 172.16.72.133:8848
         namespace: 76dae550-4133-44d8-b591-dc82f5f97b6e
         username: nacos
         password: nacos

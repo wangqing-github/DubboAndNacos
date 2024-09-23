@@ -15,5 +15,4 @@ public interface UserInfoService extends IService<UserInfo> {
 
     void insert(UserInfo userInfo);
 
-    void testSentinel();
 }

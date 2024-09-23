@@ -6,7 +6,7 @@ dubbo:
     serialize-check-status: WARN
     qos-enable: false
   registry:
-    address: nacos://172.16.72.132:8848?namespace=e8942369-0b37-44a0-b711-3927db1796ad
+    address: nacos://172.16.72.133:8848?namespace=e8942369-0b37-44a0-b711-3927db1796ad
     username: nacos
     password: nacos
   consumer:
@@ -24,25 +24,9 @@ spring:
   main:
     allow-circular-references: true
   datasource:
-    url: jdbc:mysql://172.16.72.132:3306/seata?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2b8&useUnicode=true
+    url: jdbc:mysql://172.16.72.133:3306/seata?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2b8&useUnicode=true
     username: root
     password: 123456
-  cloud:
-    sentinel:
-      transport:
-        port: 8719
-        dashboard: localhost:8180
-      datasource:
-        ds2:
-          nacos:
-            server-addr: 172.16.72.132:8848
-            data-id: sentinel-rule
-            namespace: 76dae550-4133-44d8-b591-dc82f5f97b6e
-            group-id: SENTINEL_PROVIDER_GROUP
-            username: nacos
-            password: nacos
-            data-type: json
-            rule-type: flow
 #mybatis
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*Mapper.xml

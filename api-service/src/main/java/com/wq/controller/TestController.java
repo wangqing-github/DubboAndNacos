@@ -1,11 +1,8 @@
 package com.wq.controller;
 
-import com.alibaba.csp.sentinel.annotation.SentinelResource;
-import com.wq.account.AccountService;
 import com.wq.beans.UserInfo;
 import com.wq.config.TestConfiguration;
 import com.wq.service.UserInfoService;
-import org.apache.dubbo.config.annotation.DubboReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +30,4 @@ public class TestController {
         userInfoService.insert(new UserInfo("李四"));
     }
 
-    @RequestMapping("/testThree")
-    public void testThree() {
-        userInfoService.testSentinel();
-    }
 }
