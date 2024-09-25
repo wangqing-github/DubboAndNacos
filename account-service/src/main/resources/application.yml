@@ -27,6 +27,21 @@ spring:
     url: jdbc:mysql://172.16.72.133:3306/seata?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2b8&useUnicode=true
     username: root
     password: 123456
+  cloud:
+    stream:
+      function:
+        definition: consumer;
+      rocketmq:
+        binder:
+          name-server: 172.16.72.133:9876
+        bindings:
+          consumer-in-0:
+            consumer:
+              messageModel: BROADCASTING
+      bindings:
+        consumer-in-0:
+          destination: broadcast
+          group: broadcast-consumer
 #mybatis
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*Mapper.xml

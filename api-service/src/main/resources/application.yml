@@ -27,6 +27,18 @@ spring:
     url: jdbc:mysql://172.16.72.133:3306/seata?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2b8&useUnicode=true
     username: root
     password: 123456
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: 172.16.72.133:9876
+        bindings:
+          producer-out-0:
+            producer:
+              group: output_1
+      bindings:
+        producer-out-0:
+          destination: broadcast
 #mybatis
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*Mapper.xml
@@ -53,3 +65,14 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: false
+
+rocketmq:
+  producer:
+    group: my-producer-group
+    nameServer: 172.16.72.133:9876
+    sendMsgTimeout: 10000
+  consumer:
+    group: my-consumer-group
+    nameServer: 172.16.72.133:9876
+    consumeThreadMax: 20
+    consumeTimeout: 60000
