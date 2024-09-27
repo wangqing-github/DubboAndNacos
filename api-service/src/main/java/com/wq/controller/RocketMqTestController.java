@@ -38,8 +38,13 @@ public class RocketMqTestController {
         Map<String, Object> headers = new HashMap<>();
         headers.put(MessageConst.PROPERTY_KEYS, key);
         headers.put(MessageConst.PROPERTY_ORIGIN_MESSAGE_ID, 1);
-//        headers.put(MessageConst.PROPERTY_DELAY_TIME_LEVEL, 2);
+        headers.put(MessageConst.PROPERTY_DELAY_TIME_LEVEL, 2);
         Message<SimpleMsg> msg = new GenericMessage<>(new SimpleMsg("我是 delayMessage"), headers);
+        //5.x版本后 可以通过下面精确设置延时时间，注意Message的包要import为rocketmq的
+//        Message message = new Message();
+//        message.setDelayTimeMs(3500);
+//        message.setDelayTimeSec(3500);
+//        message.setDeliverTimeMs(3500);
         logger.info("发送消息：我是 delayMessage");
         streamBridge.send("delayMessage-out-0", msg);
     }
