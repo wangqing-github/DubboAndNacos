@@ -25,3 +25,24 @@ spring:
     url: jdbc:mysql://172.16.72.133:3306/mytest?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2b8&useUnicode=true
     username: root
     password: 123456
+  cloud:
+    stream:
+      function:
+        definition: broadcastMessage;delayMessage
+      rocketmq:
+        binder:
+          name-server: 172.16.72.133:9876
+        bindings:
+          broadcastMessage-in-0:
+            consumer:
+              messageModel: BROADCASTING
+          delayMessage-in-0:
+            consumer:
+              messageModel: BROADCASTING
+      bindings:
+        broadcastMessage-in-0:
+          destination: broadcast
+          group: broadcast-consumer
+        delayMessage-in-0:
+          destination: delaymessage
+          group: delay-consumer

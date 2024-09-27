@@ -23,9 +23,16 @@ public class AccountApplication {
     }
 
     @Bean
-    public Consumer<Message<SimpleMsg>> consumer() {
+    public Consumer<Message<SimpleMsg>> broadcastMessage() {
         return msg -> {
             log.info(Thread.currentThread().getName() + " Consumer1 Receive New Messages: " + msg.getPayload().getMsg());
+        };
+    }
+
+    @Bean
+    public Consumer<Message<SimpleMsg>> delayMessage() {
+        return msg -> {
+            log.info(Thread.currentThread().getName() + " Consumer Receive New Messages: " + msg.getPayload().getMsg());
         };
     }
 }
