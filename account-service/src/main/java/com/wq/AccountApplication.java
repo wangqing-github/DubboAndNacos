@@ -18,6 +18,7 @@ import java.util.function.Consumer;
 @MapperScan(basePackages = {"com.wq.mapper"})
 public class AccountApplication {
     private static final Logger log = LoggerFactory.getLogger(AccountApplication.class);
+
     public static void main(String[] args) {
         SpringApplication.run(AccountApplication.class, args);
     }
@@ -25,7 +26,7 @@ public class AccountApplication {
     @Bean
     public Consumer<Message<SimpleMsg>> broadcastMessage() {
         return msg -> {
-            log.info(Thread.currentThread().getName() + " Consumer1 Receive New Messages: " + msg.getPayload().getMsg());
+            log.info(Thread.currentThread().getName() + " Consumer1 Receive New Messages: " + msg.getPayload().getMsg() + msg.getPayload().getTime());
         };
     }
 

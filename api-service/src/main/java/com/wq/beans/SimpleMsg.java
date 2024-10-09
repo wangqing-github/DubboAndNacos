@@ -2,11 +2,12 @@ package com.wq.beans;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
-import java.io.Serializable;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @Data
-public class SimpleMsg implements Serializable {
+@NoArgsConstructor
+public class SimpleMsg{
     private String msg;
+    private String time;
 }

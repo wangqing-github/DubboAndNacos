@@ -29,14 +29,21 @@ spring:
     password: 123456
   cloud:
     stream:
-      rocketmq:
+      kafka:
         binder:
-          name-server: 172.16.72.133:9876
+          brokers: 172.16.72.133:9092
+          auto-create-topics: true
+          auto-add-partitions: true #自动分区
+          replication-factor: 1 #副本
+          min-partition-count: 1 #最小分区
+          configuration:
+            key:
+              serializer: org.apache.kafka.common.serialization.ByteArraySerializer
       bindings:
         broadcastMessage-out-0:
-          destination: broadcast
-        delayMessage-out-0:
-          destination: delaymessage
+          destination: test
+          content-type: application/json
+
 #mybatis
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*Mapper.xml

@@ -30,25 +30,24 @@ spring:
   cloud:
     stream:
       function:
-        definition: broadcastMessage;delayMessage
-      rocketmq:
+        definition: broadcastMessage
+      kafka:
         binder:
-          name-server: 172.16.72.133:9876
-          consumer:
-        bindings:
-          broadcastMessage-in-0:
-            consumer:
-              messageModel: BROADCASTING
-          delayMessage-in-0:
-            consumer:
-              messageModel: BROADCASTING
+          brokers: 172.16.72.133:9092
+          auto-create-topics: true
+          configuration:
+            key:
+              serializer: org.apache.kafka.common.serialization.ByteArraySerializer
       bindings:
         broadcastMessage-in-0:
-          destination: broadcast
-          group: broadcast-consumer
-        delayMessage-in-0:
-          destination: delaymessage
-          group: delay-consumer
+          destination: test
+          group: test-topic-account
+          content-type: application/json
+          consumer:
+            maxAttempts: 1 # 尝试消费该消息的最大次数（消息消费失败后，发布者会重新投递）。默认3
+            backOffInitialInterval: 1000 # 重试消费消息的初始化间隔时间。默认1s，即第一次重试消费会在1s后进行
+            backOffMultiplier: 2 # 相邻两次重试之间的间隔时间的倍数。默认2
+            backOffMaxInterval: 10000 # 下一次尝试重试的最大时间间隔，默认为10000ms，即10s
 #mybatis
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*Mapper.xml
