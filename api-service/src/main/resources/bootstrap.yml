@@ -14,8 +14,3 @@ spring:
         group: MY_GROUP
         file-extension: yaml
         prefix: application
-        shared-configs:
-        - data-id: test-shared.yaml
-          group: MY_GROUP
-        - data-id: test-shared-another-group.yaml
-          group: ANOTHER_GROUP
