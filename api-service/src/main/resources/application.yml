@@ -38,37 +38,6 @@ spring:
     url: jdbc:mysql://172.16.72.133:3306/seata?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2b8&useUnicode=true
     username: root
     password: 123456
-  quartz:
-    #存储方式，默认是内存memory
-    job-store: jdbc
-    #应用关闭时，是否等待定时任务执行完成
-    wait-for-jobs-to-complete-on-shutdown: true
-    properties:
-      org:
-        quartz:
-          scheduler:
-            #相同 Scheduler 名字的节点，形成一个 Quartz 集群
-            instanceName: SC_Scheduler
-            instanceId: AUTO
-          jobStore:
-            class: org.quartz.impl.jdbcjobstore.JobStoreTX
-#            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
-            dataSource: quartz_jobs
-            #是否集群部署
-            isClustered: true
-            # 集群检查周期，单位为毫秒，可以自定义缩短时间。当某一个节点宕机的时候，其他节点等待多久后开始执行任务
-            clusterCheckinInterval: 5000
-          threadPool:
-            threadCount: 25 # 线程池大小。默认为 10 。
-            threadPriority: 5 # 线程优先级
-            class: org.quartz.simpl.SimpleThreadPool # 线程池类型
-          dataSource:
-            #这个名字是上面的jobStore.dataSource定义的
-            quartz_jobs:
-              driver: com.mysql.cj.jdbc.Driver
-              URL: jdbc:mysql://172.16.72.133:3306/quartz_jobs?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2b8&useUnicode=true
-              user: root
-              password: 123456
 #mybatis
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*Mapper.xml
