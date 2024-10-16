@@ -8,6 +8,7 @@
         <module>api-service</module>
         <module>dubbo-api</module>
         <module>friend-service</module>
+        <module>common</module>
     </modules>
 
     <groupId>com.example</groupId>
@@ -89,6 +90,11 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>account-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>common</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

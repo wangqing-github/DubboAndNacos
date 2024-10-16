@@ -1,9 +1,9 @@
-package com.wq.config;
+package com.wq.quartz;
 
-import com.wq.quartz.ZedJob;
 import org.quartz.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import quartz.ZedJob;
 
 @Configuration
 public class QuartzConfig {
@@ -13,7 +13,7 @@ public class QuartzConfig {
                 // 指定任务的名称
                 .withIdentity("zedJob")
                 // 任务描述
-                .withDescription("任务描述2222：用于输出冬奥欢迎语")
+                .withDescription("任务描述：用于输出冬奥欢迎语")
                 // 每次任务执行后进行存储
                 .storeDurably()
                 .build();
@@ -21,14 +21,15 @@ public class QuartzConfig {
 
     @Bean
     public Trigger trigger() {
-        CronScheduleBuilder scheduleBuilder =
-                CronScheduleBuilder.cronSchedule("0/5 * * * * ? *");
         //创建触发器
+//        SimpleScheduleBuilder simpleScheduleBuilder = SimpleScheduleBuilder.repeatSecondlyForTotalCount(10);
+        SimpleScheduleBuilder simpleScheduleBuilder1 = SimpleScheduleBuilder.repeatSecondlyForever(5);
         return TriggerBuilder.newTrigger()
                 // 绑定工作任务
+                .withIdentity("zedJob")
                 .forJob(jobDetail())
                 // 每隔 5 秒执行一次 job
-                .withSchedule(SimpleScheduleBuilder.repeatSecondlyForever(5))
+                .withSchedule(simpleScheduleBuilder1)
                 .build();
     }
 }
