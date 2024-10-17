@@ -1,6 +1,6 @@
 package com.wq.controller;
 
-import com.wq.beans.UserInfo;
+import beans.UserInfo;
 import com.wq.service.UserInfoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

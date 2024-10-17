@@ -33,6 +33,7 @@
         <mybatis-plus-generator-version>3.4.1</mybatis-plus-generator-version>
         <velocity-engine-version>2.3</velocity-engine-version>
         <commons-io-version>2.4</commons-io-version>
+        <elasticjob-version>3.0.0-RC1</elasticjob-version>
     </properties>
     <!-- 配置在此模块下的，子模块自动引入依赖-->
     <dependencies>
@@ -162,6 +163,16 @@
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${commons-io-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shardingsphere.elasticjob</groupId>
+                <artifactId>elasticjob-lite-spring-boot-starter</artifactId>
+                <version>${elasticjob-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shardingsphere.elasticjob</groupId>
+                <artifactId>elasticjob-error-handler-email</artifactId>
+                <version>${elasticjob-version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

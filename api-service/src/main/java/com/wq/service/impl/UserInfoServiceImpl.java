@@ -2,7 +2,7 @@ package com.wq.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.wq.account.AccountService;
-import com.wq.beans.UserInfo;
+import beans.UserInfo;
 import com.wq.mapper.UserInfoMapper;
 import com.wq.service.UserInfoService;
 import org.apache.dubbo.config.annotation.DubboReference;

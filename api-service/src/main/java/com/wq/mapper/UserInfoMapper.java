@@ -1,7 +1,7 @@
 package com.wq.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.wq.beans.UserInfo;
+import beans.UserInfo;
 
 /**
  * <p>

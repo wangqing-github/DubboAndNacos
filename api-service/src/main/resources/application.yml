@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 dubbo:
   application:
     name: api-service
@@ -64,3 +64,29 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: false
+elasticjob:
+  regCenter:
+    #zookeeper 的ip:port
+    serverLists: 172.16.72.133:2181
+    #名命空间，自己定义就好了
+    namespace: elastic-job-test
+    base-sleep-time-milliseconds: 10000
+    # 等待重试的间隔时间的最大值
+    max-sleep-time-milliseconds: 30000
+  jobs:
+    #你的这个定时任务名称，自定义名称
+    zedJob:
+      #定时任务的全路径名
+      elasticJobClass: com.wq.elasticjob.ZedJob
+      #定时任务执行的cron表达式
+      cron: 0/5 * * * * ?
+      #分片数量
+      shardingTotalCount: 1
+    fragmentationJob:
+      #定时任务的全路径名
+      elasticJobClass: com.wq.elasticjob.FragmentationJob
+      #定时任务执行的cron表达式
+      cron: 0/10 * * * * ?
+      #分片数量
+      shardingTotalCount: 3
+      shardingItemParameters: "0=text,1=image,2=video"

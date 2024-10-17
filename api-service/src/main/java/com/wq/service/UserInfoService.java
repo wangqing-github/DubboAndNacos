@@ -1,7 +1,7 @@
 package com.wq.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.wq.beans.UserInfo;
+import beans.UserInfo;
 
 /**
  * <p>
