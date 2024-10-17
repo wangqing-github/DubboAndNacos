@@ -90,3 +90,11 @@ elasticjob:
       #分片数量
       shardingTotalCount: 3
       shardingItemParameters: "0=text,1=image,2=video"
+    flowJob:
+      #定时任务的全路径名
+      elasticJobClass: com.wq.elasticjob.FlowJob
+      #定时任务执行的cron表达式
+      cron: 0/10 * * * * ?
+      #分片数量
+      shardingTotalCount: 3
+      shardingItemParameters: "0=text,1=image,2=video"
