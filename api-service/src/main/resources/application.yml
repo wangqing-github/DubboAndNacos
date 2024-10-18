@@ -6,7 +6,7 @@ dubbo:
     serialize-check-status: WARN
     qos-enable: false
   registry:
-    address: nacos://172.16.72.133:8848?namespace=e8942369-0b37-44a0-b711-3927db1796ad
+    address: nacos://172.16.72.134:8848?namespace=e8942369-0b37-44a0-b711-3927db1796ad
     username: nacos
     password: nacos
   consumer:
@@ -24,7 +24,7 @@ spring:
   main:
     allow-circular-references: true
   redis:
-    host: 172.16.72.133  # 地址
+    host: 172.16.72.134  # 地址
     port: 6379  # 端口号
     database: 0  # 数据库索引（默认为0）
     timeout: 1800000  # 连接超时时间（毫秒）
@@ -35,7 +35,7 @@ spring:
         max-idle: 5  # 连接池中最大空闲连接
         min-idle: 0  # 连接池中最小空闲连接
   datasource:
-    url: jdbc:mysql://172.16.72.133:3306/seata?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2b8&useUnicode=true
+    url: jdbc:mysql://172.16.72.134:3306/seata?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2b8&useUnicode=true
     username: root
     password: 123456
 #mybatis
@@ -67,7 +67,7 @@ mybatis-plus:
 elasticjob:
   regCenter:
     #zookeeper 的ip:port
-    serverLists: 172.16.72.133:2181
+    serverLists: 172.16.72.134:2181
     #名命空间，自己定义就好了
     namespace: elastic-job-test
     base-sleep-time-milliseconds: 10000
