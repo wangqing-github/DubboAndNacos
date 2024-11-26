@@ -22,7 +22,6 @@ public class QuartzConfig {
     @Bean
     public Trigger trigger() {
         //创建触发器
-//        SimpleScheduleBuilder simpleScheduleBuilder = SimpleScheduleBuilder.repeatSecondlyForTotalCount(10);
         SimpleScheduleBuilder simpleScheduleBuilder1 = SimpleScheduleBuilder.repeatSecondlyForever(5);
         return TriggerBuilder.newTrigger()
                 // 绑定工作任务

@@ -17,13 +17,6 @@ public class ZedJob extends QuartzJobBean {
 
     @Override
     protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
-//        try {
-//            logger.info("开始睡眠");
-//            Thread.sleep(2000);
-//            logger.info("睡眠结束");
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-        logger.info("幼年是盼盼，青年是晶晶，中年是冰墩墩，生活见好逐渐发福");
+        logger.info("我是ZedJob");
     }
 }
